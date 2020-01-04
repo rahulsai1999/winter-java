@@ -1,6 +1,4 @@
 import java.util.*;
-import java.io.*;
-import java.lang.*;
 
 class multiarray {
     public static int genTutor(int n) {
