@@ -61,7 +61,7 @@ class Film {
 
 }
 
-class FilmMain {
+class filmmain {
     public static void main(String args[]) {
         Vector<Film> x = new Vector<Film>(5);
         Film f1 = new Film("Terminator", "English", "Arnold", "Action", 150);

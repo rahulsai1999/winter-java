@@ -1,47 +1,39 @@
-import java.util.*;
+import java.util.Scanner;
 
-class multiarray {
-    public static int genTutor(int n) {
-        if (n % 4 == 0)
-            n /= 4;
-        else
-            n = n / 4 + 1;
-        return n;
-    }
+public class multiarray {
+    public static void main(String[] args) {
+        int i, j;
+        double t;
+        // Declaring 2-D array with 4 rows
+        int arr[][] = new int[4][];
 
-    public static void printArr(int a[]) {
-        for (int i : a) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-    }
-
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter the number of batches: ");
-        int n[] = new int[Integer.parseInt(in.nextLine())];
-
-        int tutors[][] = new int[n.length][];
-
-        for (int i = 0; i < n.length; ++i) {
-            System.out.print("\nEnter the number of slow learners in batch " + (i + 1) + ": ");
-            tutors[i] = new int[genTutor(Integer.parseInt(in.nextLine()))];
-        }
-
-        for (int i = 0; i < n.length; ++i) {
-            int j;
-            int q = n[i] / 4;
-            int r = n[i] % 4;
-            for (j = 0; i < q; ++j) {
-                tutors[i][j] = 4;
+        // input for each batch
+        Scanner sc = new Scanner(System.in);
+        for (i = 0; i < arr.length; i++) {
+            System.out.print("Enter number of students for batch " + (i + 1) + ": ");
+            t = sc.nextDouble();
+            arr[i] = new int[(int) Math.ceil(t / 4)];
+            for (j = 0; j < arr[i].length; j++) {
+                if (t >= 4)
+                    arr[i][j] = 4;
+                else
+                    arr[i][j] = (int) t;
+                t = t - 4;
             }
-            tutors[i][j] = r;
         }
+        sc.close();
 
-        System.out.print("\n The batches scheduled are: ");
-        for (int i = 0; i < n.length; ++i)
-            printArr(tutors[i]);
-
-        in.close();
+        // Displaying the values of 2D Jagged array
+        int cfour = 0;
+        System.out.println("Contents of 2D Jagged Array");
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+                if (arr[i][j] == 4)
+                    cfour++;
+            }
+            System.out.println();
+        }
+        System.out.println("Number of tutors with 4 students are: " + cfour);
     }
 }
