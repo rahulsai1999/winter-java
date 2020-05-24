@@ -19,7 +19,7 @@ class Queensland extends ThemePark {
 
     public void calculateCost(int adult, int child) {
         float total = (adultPrice * adult) + (childPrice * child);
-        System.out.println("The total ticket cost is: " + total);
+        System.out.println("\nThe total ticket cost is: " + total);
     }
 
     public void playGame() {
@@ -27,10 +27,10 @@ class Queensland extends ThemePark {
         int gameID;
         Scanner in = new Scanner(System.in);
         do {
-            System.out.print("Queensland\n1.Play game\n2.Quit\n");
+            System.out.print("\nQueensland\n1.Play game\n2.Quit\n");
             choice = in.nextInt();
             if (choice == 1) {
-                System.out.println("Enter the gameID: ");
+                System.out.print("Enter the gameID: ");
                 gameID = in.nextInt();
                 if (games[gameID] == false) {
                     games[gameID] = true;
@@ -45,7 +45,7 @@ class Queensland extends ThemePark {
 
     public void showDetails() {
         for (int i = 0; i < games.length; ++i) {
-            System.out.println("GameId " + i + ": Status -> " + games[i]);
+            System.out.println("GameId " + (i + 1) + ": Status -> " + games[i]);
         }
     }
 
@@ -60,7 +60,7 @@ class WonderLa extends ThemePark {
 
     public void calculateCost(int adult, int child) {
         float total = (adultPrice * adult) + (childPrice * child);
-        System.out.println("The total ticket cost is: " + total);
+        System.out.println("\nThe total ticket cost is: " + total);
     }
 
     public void playGame() {
@@ -68,13 +68,13 @@ class WonderLa extends ThemePark {
         int gameID;
         Scanner in = new Scanner(System.in);
         do {
-            System.out.print("WonderLa\n1.Play game\n2.Quit\n");
+            System.out.print("\nWonderLa\n1.Play game\n2.Quit\n");
             choice = in.nextInt();
             if (choice == 1) {
-                System.out.println("Enter the gameID: ");
+                System.out.print("Enter the gameID: ");
                 gameID = in.nextInt();
                 games[gameID]++;
-                System.out.println("WonderLa Game " + gameID + "played " + games[gameID] + " times");
+                System.out.println("WonderLa Game " + gameID + " played " + games[gameID] + " times");
             } else
                 break;
         } while (choice != 2);
@@ -82,12 +82,12 @@ class WonderLa extends ThemePark {
 
     public void showDetails() {
         for (int i = 0; i < games.length; ++i) {
-            System.out.println("GameId " + i + ": Count -> " + games[i]);
+            System.out.println("GameId " + (i + 1) + ": Count -> " + games[i]);
         }
     }
 }
 
-class hello {
+class abstheme {
     public static void main(String args[]) {
         Queensland park1 = new Queensland();
         WonderLa park2 = new WonderLa();

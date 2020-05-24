@@ -26,7 +26,7 @@ class phoneexc {
 
     static void checkArg(String reg, String phone) throws IllegalArgumentException {
         if (reg.length() == 9 && phone.length() == 10) {
-            System.out.println("\nRegister Number and Phone Number valid");
+            System.out.println("\nRegister Number and Phone Number valid length");
             flagA = 1;
         } else {
             throw new IllegalArgumentException("Either Register Number or Phone number not of valid length");
