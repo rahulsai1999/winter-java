@@ -1,3 +1,5 @@
 .vscode
 *.class
 *.txt
+*.docx
+*.pdf
